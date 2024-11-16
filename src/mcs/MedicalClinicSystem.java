@@ -1,7 +1,7 @@
 package mcs;
 
 import java.util.Scanner;
-
+/*
 // Modify as necessary
 // References: MenuOptionTester.java, Java_II_HOLs_10
 public class MedicalClinicSystem {
@@ -41,3 +41,4 @@ public class MedicalClinicSystem {
         }
     }
 }
+*/
