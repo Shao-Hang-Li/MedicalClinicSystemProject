@@ -59,4 +59,10 @@ public abstract class Person {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Name: %s %nDate of birth: %s %nPhone number: %s %nAddress: %s", name, dateOfBirth,
+                phoneNumber, address);
+    }
 }

@@ -35,4 +35,8 @@ public class Patient extends Person {
 
     // Return String representation of the Patient object
     @Override
+    public String toString() {
+        return String.format("%s %nInsurance company: %s %nMedical history: %s", super.toString(), insuranceCompany,
+                medicalHistory);
+    }
 }
