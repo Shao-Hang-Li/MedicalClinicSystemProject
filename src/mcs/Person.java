@@ -16,7 +16,7 @@ public abstract class Person {
 
     public Person() {
         this.name = "John Doe";
-        this.dateOfBirth = "24/03/1996";
+        this.dateOfBirth = "24-03-1996";
         this.phoneNumber = "514-224-8232";
         this.address = "123 Playground Street";    
     }
