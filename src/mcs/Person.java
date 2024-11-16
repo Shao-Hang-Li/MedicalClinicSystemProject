@@ -21,6 +21,7 @@ public abstract class Person {
 
     // Default constructor
     public Person() {
+
         this.name = "";
         this.dateOfBirth = new Date();
         this.phoneNumber = "";
@@ -58,5 +59,11 @@ public abstract class Person {
 
     public void setAddress(String address) {
         this.address = address;
+
+        this.name = "John Doe";
+        this.dateOfBirth = "24-03-1996";
+        this.phoneNumber = "514-224-8232";
+        this.address = "123 Playground Street";    
+
     }
 }
