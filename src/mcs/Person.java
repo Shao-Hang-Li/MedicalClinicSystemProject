@@ -21,6 +21,7 @@ public abstract class Person {
 
     // Default constructor
     public Person() {
+
         this.name = "";
         this.dateOfBirth = new Date();
         this.phoneNumber = "";

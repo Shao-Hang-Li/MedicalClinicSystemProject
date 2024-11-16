@@ -15,7 +15,6 @@ public class Patient extends Person {
         this.insuranceCompany = insuranceCompany;
         this.medicalHistory = medicalHistory;
     }
-
     // Mutators and accessors
     public String getInsuranceCompany() {
         return insuranceCompany;

@@ -10,6 +10,7 @@ public class Doctor extends Person {
                   int yearsOfExperience) {
         // Super class Person
         super(name, dateOfBirth, phoneNumber, address);
+
         this.specialty = specialty;
         // Validation for yearsOfExperience (can't be negative)
         if (yearsOfExperience < 0) {
