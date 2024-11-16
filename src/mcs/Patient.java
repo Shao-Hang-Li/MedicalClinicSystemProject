@@ -12,6 +12,9 @@ public class Patient extends Person {
         // super class Person
         super(name, dateOfBirth, phoneNumber, address);
 
+        this.insuranceCompany = insuranceCompany;
+        this.medicalHistory = medicalHistory;
+    }
     // Mutators and accessors
     public String getInsuranceCompany() {
         return insuranceCompany;
@@ -31,6 +34,5 @@ public class Patient extends Person {
 
     // Return String representation of the Patient object
     @Override
-
 
 }
