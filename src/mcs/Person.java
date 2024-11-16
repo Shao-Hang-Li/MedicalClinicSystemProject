@@ -1,23 +1,69 @@
 package mcs;
 
+import java.time.LocalDateTime;
+
 // followed p.5 format example for Person class
 public abstract class Person {
+
+    // Data members (fields)
     private String name;
-    private String dateOfBirth;
+    private Date dateOfBirth;
     private String phoneNumber;
     private String address;
 
-    public Person(String name, String dateOfBirth, String phoneNumber, String address) {
+    // Constructor with parameters
+    public Person(String name, Date dateOfBirth, String phoneNumber, String address) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.phoneNumber = phoneNumber;
         this.address = address;
     }
 
+    // Default constructor
     public Person() {
+
+        this.name = "";
+        this.dateOfBirth = new Date();
+        this.phoneNumber = "";
+        this.address = "";
+    }
+
+    // Mutators and accessors
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+
         this.name = "John Doe";
         this.dateOfBirth = "24-03-1996";
         this.phoneNumber = "514-224-8232";
         this.address = "123 Playground Street";    
+
     }
 }
