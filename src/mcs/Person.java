@@ -1,5 +1,6 @@
 package mcs;
 
+// followed p.5 format example for Person class
 public abstract class Person {
     private String name;
     private String dateOfBirth;
