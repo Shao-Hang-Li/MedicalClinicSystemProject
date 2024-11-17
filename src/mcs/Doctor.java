@@ -60,7 +60,7 @@ public class Doctor extends Person implements Treatable{
                     "4. Address \n" +
                     "5. Specialty \n" +
                     "6. Years of experience\n" +
-                    "7. back to menu");
+                    "7. Back to menu");
                 option = input.nextInt();
                 input.nextLine();
                 switch (option){

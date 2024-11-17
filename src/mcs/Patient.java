@@ -66,7 +66,7 @@ public class Patient extends Person implements Treatable{
                         "4. Address \n" +
                         "5. Insurance Company \n" +
                         "6. Medical History\n" +
-                        "7. back to menu");
+                        "7. Back to menu");
                 option = input.nextInt();
                 input.nextLine();
                 switch (option){
