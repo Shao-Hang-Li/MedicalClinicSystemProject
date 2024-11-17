@@ -32,7 +32,7 @@ public class MedicalClinicSystem {
             }
 
             switch (selectedOption) {
-                case ADD_DOCTOR -> System.out.println("Add a new Doctor...");
+                case ADD_DOCTOR -> addDoctor();
                 case ADD_PATIENT -> System.out.println("Add a new Patient...");
                 case DISPLAY_DOCTOR_INFO -> System.out.println("Display Doctor Info...");
                 case DISPLAY_PATIENT_INFO -> System.out.println("Display Patient Info...");
@@ -240,7 +240,7 @@ public class MedicalClinicSystem {
         }
     }
 
-    public static void addDoctor() {
+    public void addDoctor() {
         System.out.println("Enter Doctor's name");
         String name = console.nextLine();
         System.out.println("Enter Doctor's date of birth starting from date to year");
