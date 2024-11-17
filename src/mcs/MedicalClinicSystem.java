@@ -7,15 +7,16 @@ import java.util.Scanner;
 // Modify as necessary
 // References: MenuOptionTester.java, Java_II_HOLs_10
 public class MedicalClinicSystem {
-    static Scanner console = new Scanner(System.in);
+
     ArrayList<Doctor> doctors = new ArrayList<>();
     ArrayList<Patient> patients = new ArrayList<>();
     ArrayList<Treatment> treatments = new ArrayList<>();
 
     public static void main(String[] args) {
+        MedicalClinicSystem mcs = new MedicalClinicSystem();
     
         while (true) {
-
+            Scanner console = new Scanner(System.in);
             for (MenuOption menuOption : MenuOption.values()) {
                 System.out.println(menuOption.getValue() + ". " + menuOption.getDescription());
 
@@ -32,7 +33,7 @@ public class MedicalClinicSystem {
             }
 
             switch (selectedOption) {
-                case ADD_DOCTOR -> addDoctor();
+                case ADD_DOCTOR -> mcs.addDoctor();
                 case ADD_PATIENT -> System.out.println("Add a new Patient...");
                 case DISPLAY_DOCTOR_INFO -> System.out.println("Display Doctor Info...");
                 case DISPLAY_PATIENT_INFO -> System.out.println("Display Patient Info...");
@@ -241,6 +242,7 @@ public class MedicalClinicSystem {
     }
 
     public void addDoctor() {
+        Scanner console = new Scanner(System.in);
         System.out.println("Enter Doctor's name");
         String name = console.nextLine();
         System.out.println("Enter Doctor's date of birth starting from date to year");
@@ -255,6 +257,7 @@ public class MedicalClinicSystem {
         int yearsOfExperience = console.nextInt();
     
         doctors.add(new Doctor(name, dateOfBirth, phoneNumber, address, specialty, yearsOfExperience));
+        console.close();
     }    
 
 }
