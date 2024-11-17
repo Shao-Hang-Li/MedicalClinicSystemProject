@@ -98,14 +98,14 @@ public class Treatment implements Treatable{
      * @return detailed info of the treatment
      */
     @Override
-    public String performTreatment() {
-
-        return this.toString();
+    public void performTreatment() {
+        String s1 = "Performing " + this.treatmentType + " treatment on " + this.patient.getName() + " by " + this.doctor.getName() + ". \n";
+        System.out.println(s1.concat(this.toString()));
     }
     //to String method
     @Override
     public String toString(){
         return "Treatment ID: " + treatmentID + "\n Date: " + date + "\n Doctor: " + doctor + "\n Patient: " + patient
-                + "\n Treatment Type: " + treatmentType + "\n Cost: " + cost;
+                + "\n Treatment Type: " + treatmentType + "\n Cost: $" + cost;
     }//end method
 }
