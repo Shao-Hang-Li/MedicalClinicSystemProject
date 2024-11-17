@@ -55,9 +55,11 @@ public class MedicalClinicSystem {
      * The method reads Doctor, Patient and Treatment from corresponding files
      */
     public void readAll(){
+        System.out.println("Accessing Data...");
         readDoctorFromFile();
         readPatientFromFile();
         readTreatmentFromFile();
+        System.out.println("Access Complete.");
     }
 
     /**
@@ -65,9 +67,11 @@ public class MedicalClinicSystem {
      * The method writes Doctor, Patient and Treatment to corresponding files
      */
     public void saveAll(){
+        System.out.println("Saving Data...");
         writeDoctorToFile();
         writePatientToFile();
         writeTreatmentToFile();
+        System.out.println("All Data saved. See you next time.");
     }
     
     /**
