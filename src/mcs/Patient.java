@@ -127,55 +127,9 @@ public class Patient extends Person implements Treatable{
         }
     }
 
-    /**
-     * the method takes a Patient ArrayList and write into a text file, with each peach of info seperated by comma
-     * @param patients patient ArrayList
-     */
-    public void writeToFile(ArrayList<Patient> patients) {
-        try {
-            PrintWriter writer = new PrintWriter("Patient.txt");
-            for (Patient patient:patients){
-            Date dateOfBirth = patient.getDateOfBirth();
-            writer.printf("%s,%d,%d,%d,%s,%s,%s,%s%n", this.getName(), dateOfBirth.getDay(), dateOfBirth.getMonth(), dateOfBirth.getYear()
-                    , this.getPhoneNumber(), this.getAddress(), this.getInsuranceCompany(), this.getMedicalHistory());
-            }
-            writer.close();
-        }catch (FileNotFoundException e) {
-            System.out.println("File not found.");
-        }
-    }
 
-    /**
-     * The method reads from Patient.txt file and returns all patient objects in an ArrayList
-     * @return a patient ArrayList
-     */
-    public ArrayList<Patient> readFromFile() {
-        ArrayList<Patient> patients = new ArrayList<Patient>();
-        try{
-            Scanner reader = new Scanner("Patient.txt");
-            while (reader.hasNextLine()){
-                String aLine = reader.nextLine();
-                String [] line = aLine.split(",");      //Separate String by comma and store into a list
-                //access each data from the list by index
-                String name = line[0];
-                //we can use Integer.parseInt for type conversion
-                Date dateOfBirth = new Date(Integer.valueOf(line[1]), Integer.valueOf(line[2]), Integer.valueOf(line[3]));
-                String phoneNumber = line[4];
-                String address = line[5];
-                String insuranceCompany = line[6];
-                String medicalHistory = line[7];
-                //now create a patient object
-                Patient aPatient = new Patient(name, dateOfBirth, phoneNumber, address, insuranceCompany, medicalHistory);
-                patients.add(aPatient);     //store into the ArrayList
-            }
-            reader.close();
-            return patients;
-        }
-        catch (Exception e){
-            System.out.println(e);
-        }
-        return patients;
-    }
+
+
 
     /**
      * The method prints the performed treatment for the specific object

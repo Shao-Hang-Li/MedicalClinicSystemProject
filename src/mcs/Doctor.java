@@ -110,60 +110,13 @@ public class Doctor extends Person implements Treatable{
         }
     }
 
+    /**
+     * The method prints the performed treatment for the specific object
+     */
     public void performTreatment(){
         System.out.println("Doctor" + this.getName() + "is performing treatment");
     }
 
-
-    /**
-     * the method takes a Doctor ArrayList and write into a text file, with each peach of info seperated by comma
-     * @param doctors An ArrayList consisting all doctor objects
-     */
-    public void writeToFile(ArrayList<Doctor> doctors) {
-        try {
-            PrintWriter writer = new PrintWriter("Doctor.txt");
-            for (Doctor doctor:doctors){
-                Date dateOfBirth = doctor.getDateOfBirth();
-                writer.printf("%s,%d,%d,%d,%s,%s,%s,%d%n", this.getName(), dateOfBirth.getDay(), dateOfBirth.getMonth(), dateOfBirth.getYear()
-                        , this.getPhoneNumber(), this.getAddress(), this.getSpecialty(), this.getYearsOfExperience());
-            }
-            writer.close();
-        }catch (FileNotFoundException e) {
-            System.out.println("File not found.");
-        }
-    }
-
-    /**
-     * The method reads from Doctor.txt file and returns all doctor objects in an ArrayList
-     * @return a doctor ArrayList
-     */
-    public ArrayList<Doctor> readFromFile() {
-        ArrayList<Doctor> doctors = new ArrayList<Doctor>();
-        try{
-            Scanner reader = new Scanner("Doctor.txt");
-            while (reader.hasNextLine()){
-                String aLine = reader.nextLine();
-                String [] line = aLine.split(",");      //Separate String by comma and store into a list
-                //access each data from the list by index
-                String name = line[0];
-                //we can use Integer.parseInt for type conversion
-                Date dateOfBirth = new Date(Integer.valueOf(line[1]), Integer.valueOf(line[2]), Integer.valueOf(line[3]));
-                String phoneNumber = line[4];
-                String address = line[5];
-                String specialty = line[6];
-                int yearsOfExperience = Integer.valueOf(line[7]);
-                //now create a patient object
-               Doctor aDoctor = new Doctor(name, dateOfBirth, phoneNumber, address, specialty, yearsOfExperience);
-                doctors.add(aDoctor);     //store into the ArrayList
-            }
-            reader.close();
-            return doctors;
-        }
-        catch (Exception e){
-            System.out.println(e);
-        }
-        return doctors;
-    }
 
     // Return String representation of the Doctor object
     @Override
