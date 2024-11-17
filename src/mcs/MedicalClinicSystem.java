@@ -247,6 +247,7 @@ public class MedicalClinicSystem {
         String name = console.nextLine();
         System.out.println("Enter Doctor's date of birth starting from date to year");
         Date dateOfBirth = new Date(console.nextInt(), console.nextInt(), console.nextInt());
+        console.nextLine();
         System.out.println("Enter Doctor's phone number");
         String phoneNumber = console.nextLine();
         System.out.println("Enter");
