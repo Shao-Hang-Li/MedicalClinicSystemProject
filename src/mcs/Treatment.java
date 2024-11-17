@@ -1,5 +1,10 @@
 package mcs;
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Treatment implements Treatable{
     //data members
     private String treatmentID;
@@ -93,13 +98,56 @@ public class Treatment implements Treatable{
         this.cost = cost;
     }
 
+    //String treatmentID, Date date, Doctor doctor, Patient patient, String treatmentType,double cost
+    public void writeToFile(ArrayList<Treatment> treatments) {
+        try {
+            PrintWriter writer = new PrintWriter("Treatment.txt");
+            for (Treatment treat:treatments) {
+                Date date = treat.getDate();
+                //here we only write Doctor and Patient name in the file
+                writer.printf("%s,%d,%d,%d,%s,%s,%s,%.2f%n", this.getTreatmentID(), date.getDay(), date.getMonth(),
+                        date.getYear(), this.getDoctor().getName(), this.getPatient().getName(), this.getTreatmentType(), this.getCost());
+            }
+            writer.close();
+        }catch (FileNotFoundException e) {
+            System.out.println("File not found.");
+        }
+    }
+
+    public ArrayList<Treatment> readFromFile() {
+        ArrayList<Treatment> treatments = new ArrayList<Treatment>();
+        try{
+            Scanner reader = new Scanner("Treatment.txt");
+            while (reader.hasNextLine()){
+                String aLine = reader.nextLine();
+                String [] line = aLine.split(",");      //Separate String by comma and store into a list
+                //access each data from the list by index
+                String treatmentID = line[0];
+                //we can use Integer.parseInt for type conversion
+                Date date = new Date(Integer.valueOf(line[1]), Integer.valueOf(line[2]), Integer.valueOf(line[3]));
+                String doctorName = line[4];
+                String patientName = line[5];
+                String treatmentType = line[6];
+                double cost = Double.valueOf(line[7]);
+                //now create a patient object
+                Treatment aTreatment = new Treatment();
+                treatments.add(aTreatment);     //store into the ArrayList
+            }
+            reader.close();
+            return treatments;
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
+        return treatments;
+    }
+
     /**
-     * This method returns the performed treatment for the specific object
-     * @return detailed info of the treatment
+     * This method prints the performed treatment for the specific object
      */
     @Override
     public void performTreatment() {
-        String s1 = "Performing " + this.treatmentType + " treatment on " + this.patient.getName() + " by " + this.doctor.getName() + ". \n";
+        String s1 = "Performing " + this.treatmentType + " treatment on " + this.patient.getName() + " by " + this.doctor.getName() + ". Treatment ID: "+ this.getTreatmentID() + "\n";
         System.out.println(s1.concat(this.toString()));
     }
     //to String method
