@@ -236,6 +236,21 @@ public class MedicalClinicSystem {
         }
     }
 
-
+    public static void addDoctor() {
+        System.out.println("Enter Doctor's name");
+        String name = console.nextLine();
+        System.out.println("Enter Doctor's date of birth starting from date to year");
+        Date dateOfBirth = new Date(console.nextInt(), console.nextInt(), console.nextInt());
+        System.out.println("Enter Doctor's phone number");
+        String phoneNumber = console.nextLine();
+        System.out.println("Enter");
+        String address = console.nextLine();
+        System.out.println();
+        String specialty = console.nextLine();
+        System.out.println();
+        int yearsOfExperience = console.nextInt();
+    
+        doctors.add(new Doctor(name, dateOfBirth, phoneNumber, address, specialty, yearsOfExperience));
+    }    
 
 }
