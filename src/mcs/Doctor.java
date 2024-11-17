@@ -1,6 +1,6 @@
 package mcs;
-
-public class Doctor extends Person {
+import java.util.Scanner;
+public class Doctor extends Person implements Treatable{
     // Data members (Fields)
     private String specialty;
     private int yearsOfExperience;
@@ -12,11 +12,7 @@ public class Doctor extends Person {
         super(name, dateOfBirth, phoneNumber, address);
 
         this.specialty = specialty;
-        // Validation for yearsOfExperience (can't be negative)
-        if (yearsOfExperience < 0) {
-            throw new IllegalArgumentException("Years of experience must be a positive value");
-        }
-        this.yearsOfExperience = yearsOfExperience;
+        this.setYearsOfExperience(yearsOfExperience);    //setter with validation
     }
 
     // Mutators and accessors
@@ -30,6 +26,89 @@ public class Doctor extends Person {
 
     public int getYearsOfExperience() {
         return yearsOfExperience;
+    }
+
+    public void setYearsOfExperience(int yearsOfExperience) {
+        // Validation for yearsOfExperience (can't be negative)
+        if (yearsOfExperience < 0) {
+            throw new IllegalArgumentException("Years of experience must be a positive value");
+        }
+        this.yearsOfExperience = yearsOfExperience;
+    }
+
+    /**
+     * The method Prints the Doctor's basic Info (Name, Specialty, Experience)
+     */
+    @Override
+    public void displayInfo(){
+        System.out.println(this);
+    }
+
+    /**
+     * The method takes user input and update corresponding parameter of the Doctor object
+     */
+    @Override
+    public void updateInfo(){
+        int option = 0;
+        Scanner input = new Scanner(System.in);
+        try {
+            while (option != 7){
+                System.out.println("Please specify the info you wish to update");
+                System.out.println("1. Name \n" +
+                    "2. Birthday \n" +
+                    "3. Phone Number \n" +
+                    "4. Address \n" +
+                    "5. Specialty \n" +
+                    "6. Years of experience\n" +
+                    "7. back to menu");
+                option = input.nextInt();
+                input.nextLine();
+                switch (option){
+                    case 1:
+                        System.out.println("Enter the name of the doctor");
+                        String name = input.nextLine();
+                        this.setName(name);
+                        break;
+                    case 2:
+                        System.out.println("Enter the date of birth (DD MM YYYY)");
+                        int day = input.nextInt();
+                        int month = input.nextInt();
+                        int year = input.nextInt();
+                        input.nextLine();
+                        Date newBirthday = new Date(day, month, year);
+                        this.setDateOfBirth(newBirthday);
+                        break;
+                    case 3:
+                        System.out.println("Enter the phone number of the doctor");
+                        String phoneNumber = input.nextLine();
+                        this.setPhoneNumber(phoneNumber);
+                        break;
+                    case 4:
+                        System.out.println("Enter the address of the doctor");
+                        String address = input.nextLine();
+                        this.setAddress(address);
+                        break;
+                    case 5:
+                        System.out.println("Enter the specialty of the doctor");
+                        String specialty = input.nextLine();
+                        this.setSpecialty(specialty);
+                        break;
+                    case 6:
+                        System.out.println("Enter the years of experience of the doctor");
+                        int yearsOfExperience = input.nextInt();
+                        input.nextLine();
+                        this.setYearsOfExperience(yearsOfExperience);
+                        break;
+                }
+            }
+            input.close();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public String performTreatment(){
+        return "Doctor" + this.getName() + "is performing treatment";
     }
 
     // Return String representation of the Doctor object

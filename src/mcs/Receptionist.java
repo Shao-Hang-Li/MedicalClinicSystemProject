@@ -1,4 +1,6 @@
 package mcs;
 
-public class Receptionist {
+public class Receptionist extends Person implements Treatable {
+
+
 }

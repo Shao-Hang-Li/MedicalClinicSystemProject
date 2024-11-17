@@ -12,5 +12,5 @@ public interface Treatable {
      * This method should return the performed treatment for the specific object that implements this interface
      * @return performed treatment for an object
      */
-    public String getPerformTreatment(); // no implementation
+    public String performTreatment(); // no implementation
 }

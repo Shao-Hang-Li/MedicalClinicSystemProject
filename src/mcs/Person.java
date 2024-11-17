@@ -61,6 +61,12 @@ public abstract class Person {
         this.address = address;
     }
 
+    //method to be implemented, used to display info of Person
+    public abstract void displayInfo();
+
+    //called when user asks to update info, method will prompt user to enter corresponding info and update it
+    public abstract void updateInfo();
+
     @Override
     public String toString() {
         return String.format("Name: %s %nDate of birth: %s %nPhone number: %s %nAddress: %s", name, dateOfBirth,
