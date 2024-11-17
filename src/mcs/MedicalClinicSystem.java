@@ -8,6 +8,8 @@ import java.util.Scanner;
 // References: MenuOptionTester.java, Java_II_HOLs_10
 public class MedicalClinicSystem {
 
+    Scanner scanner = new Scanner(System.in);
+
     ArrayList<Doctor> doctors = new ArrayList<>();
     ArrayList<Patient> patients = new ArrayList<>();
     ArrayList<Treatment> treatments = new ArrayList<>();
@@ -35,7 +37,7 @@ public class MedicalClinicSystem {
 
             switch (selectedOption) {
                 case ADD_DOCTOR -> mcs.addDoctor();
-                case ADD_PATIENT -> System.out.println("Add a new Patient...");
+                case ADD_PATIENT -> mcs.addPatient();
                 case DISPLAY_DOCTOR_INFO -> System.out.println("Display Doctor Info...");
                 case DISPLAY_PATIENT_INFO -> System.out.println("Display Patient Info...");
                 case ADD_TREATMENT -> System.out.println("Add a new Treatment...");
@@ -243,23 +245,40 @@ public class MedicalClinicSystem {
     }
 
     public void addDoctor() {
-        Scanner console = new Scanner(System.in);
         System.out.println("Enter Doctor's name");
-        String name = console.nextLine();
+        String name = scanner.nextLine();
         System.out.println("Enter Doctor's date of birth starting from date to year");
-        Date dateOfBirth = new Date(console.nextInt(), console.nextInt(), console.nextInt());
-        console.nextLine();
+        Date dateOfBirth = new Date(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
+        scanner.nextLine();
         System.out.println("Enter Doctor's phone number");
-        String phoneNumber = console.nextLine();
-        System.out.println("Enter");
-        String address = console.nextLine();
-        System.out.println();
-        String specialty = console.nextLine();
-        System.out.println();
-        int yearsOfExperience = console.nextInt();
-        console.nextLine();
+        String phoneNumber = scanner.nextLine();
+        System.out.println("Enter Doctor's Address");
+        String address = scanner.nextLine();
+        System.out.println("Enter Doctor's Specialty");
+        String specialty = scanner.nextLine();
+        System.out.println("Enter Doctor's years of experience");
+        int yearsOfExperience = scanner.nextInt();
+        scanner.nextLine();
         Doctor aDoctor = new Doctor(name, dateOfBirth, phoneNumber, address, specialty, yearsOfExperience);
         doctors.add(aDoctor);
+    }    
+
+    public void addPatient() {
+        System.out.println("Enter Patient's name");
+        String name = scanner.nextLine();
+        System.out.println("Enter Patient's date of birth starting from date to year");
+        Date dateOfBirth = new Date(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
+        scanner.nextLine();
+        System.out.println("Enter Patient's phone number");
+        String phoneNumber = scanner.nextLine();
+        System.out.println("Enter Patient's Address");
+        String address = scanner.nextLine();
+        System.out.println("Enter Doctor's Specialty");
+        String insuranceCompany = scanner.nextLine();
+        System.out.println("Enter Doctor's years of experience");
+        String medicalHistory = scanner.nextLine();
+        Patient aPatient = new Patient(name, dateOfBirth, phoneNumber, address, insuranceCompany, medicalHistory);
+        patients.add(aPatient);
     }    
 
 }
