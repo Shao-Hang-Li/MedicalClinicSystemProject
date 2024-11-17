@@ -14,9 +14,9 @@ public class MedicalClinicSystem {
 
     public static void main(String[] args) {
         MedicalClinicSystem mcs = new MedicalClinicSystem();
-    
+        Scanner console = new Scanner(System.in);
         while (true) {
-            Scanner console = new Scanner(System.in);
+
             for (MenuOption menuOption : MenuOption.values()) {
                 System.out.println(menuOption.getValue() + ". " + menuOption.getDescription());
 
@@ -24,6 +24,7 @@ public class MedicalClinicSystem {
 
             System.out.println("\nEnter an option: ");
             int choice = console.nextInt();
+            console.nextLine();
 
             MenuOption selectedOption = MenuOption.fromInt(choice);
 
@@ -256,9 +257,9 @@ public class MedicalClinicSystem {
         String specialty = console.nextLine();
         System.out.println();
         int yearsOfExperience = console.nextInt();
-    
-        doctors.add(new Doctor(name, dateOfBirth, phoneNumber, address, specialty, yearsOfExperience));
-        console.close();
+        console.nextLine();
+        Doctor aDoctor = new Doctor(name, dateOfBirth, phoneNumber, address, specialty, yearsOfExperience);
+        doctors.add(aDoctor);
     }    
 
 }
