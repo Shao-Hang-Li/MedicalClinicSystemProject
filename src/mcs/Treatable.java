@@ -9,8 +9,7 @@ package mcs;
 public interface Treatable {
 
     /**
-     * This method should return the performed treatment for the specific object that implements this interface
-     * @return performed treatment for an object
+     * This method should print the performed treatment for the specific object that implements this interface
      */
-    public String performTreatment(); // no implementation
+    public void performTreatment(); // no implementation
 }

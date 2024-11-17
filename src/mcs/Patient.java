@@ -124,8 +124,13 @@ public class Patient extends Person implements Treatable{
             throw new RuntimeException(e);
         }
     }
-    public String performTreatment(){
-        return "Patient" + this.getName() + "is receiving treatment";
+
+    /**
+     * The method prints the performed treatment for the specific object
+     */
+    @Override
+    public void performTreatment(){
+        System.out.println("Patient" + this.getName() + "is receiving treatment");
     }
     // Return String representation of the Patient object
     @Override

@@ -107,8 +107,8 @@ public class Doctor extends Person implements Treatable{
         }
     }
 
-    public String performTreatment(){
-        return "Doctor" + this.getName() + "is performing treatment";
+    public void performTreatment(){
+        System.out.println("Doctor" + this.getName() + "is performing treatment");
     }
 
     // Return String representation of the Doctor object
