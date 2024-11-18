@@ -41,9 +41,9 @@ public class MedicalClinicSystem {
                 case ADD_DOCTOR -> mcs.addDoctor();
                 case ADD_PATIENT -> mcs.addPatient();
                 case DISPLAY_DOCTOR_INFO -> mcs.doctorDisplay();
-                case DISPLAY_PATIENT_INFO -> System.out.println("Display Patient Info...");
-                case ADD_TREATMENT -> System.out.println("Add a new Treatment...");
-                case VIEW_TREATMENT_DETAILS -> System.out.println("View Treatment Details...");
+                case DISPLAY_PATIENT_INFO -> mcs.patientDisplay();
+                case ADD_TREATMENT -> mcs.addTreatment();
+                case VIEW_TREATMENT_DETAILS -> mcs.treatmentDisplay();
                 case EXIT -> {
                     mcs.saveAll();
                     System.out.println("Exiting Medical Clinic System, Have a Nice Day.");
@@ -131,6 +131,7 @@ public class MedicalClinicSystem {
                 //now create a patient object
                 Treatment aTreatment = new Treatment(treatmentID, date, theDoc, thePatient, treatmentType, cost);
                 treatments.add(aTreatment);     //store into the ArrayList
+                reader.close();
             }
         }
         catch (Exception e){
@@ -158,6 +159,7 @@ public class MedicalClinicSystem {
                 //now create a patient object
                 Doctor aDoctor = new Doctor(name, dateOfBirth, phoneNumber, address, specialty, yearsOfExperience);
                 doctors.add(aDoctor);     //store into the ArrayList
+                reader.close();
             }
         }
         catch (Exception e){
@@ -185,6 +187,7 @@ public class MedicalClinicSystem {
                 //now create a patient object
                 Patient aPatient = new Patient(name, dateOfBirth, phoneNumber, address, insuranceCompany, medicalHistory);
                 patients.add(aPatient);     //store into the ArrayList
+                reader.close();
             }
         }
         catch (Exception e){
@@ -279,7 +282,26 @@ public class MedicalClinicSystem {
         String medicalHistory = scanner.nextLine();
         Patient aPatient = new Patient(name, dateOfBirth, phoneNumber, address, insuranceCompany, medicalHistory);
         patients.add(aPatient);
-    }    
+    }
+    
+    public void addTreatment() {
+        System.out.println("Enter the treatmentID");
+        String treatmentID = scanner.nextLine();
+        System.out.println("Enter the date of the treatment");
+        Date date = new Date(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
+        scanner.nextLine();
+        System.out.println("Enter the doctor preforming the treatment");
+        Doctor docName = findDoctorByName(scanner.nextLine());
+        System.out.println("Enter patient recieving treatment");
+        Patient patName = findPatientByName(scanner.nextLine());
+        System.out.println("Enter the treatment type");
+        String treatmentType = scanner.nextLine();
+        System.out.println("Enter treatment cost");
+        double cost = scanner.nextDouble();
+        scanner.nextLine();
+        Treatment aTreatment = new Treatment(treatmentID, date, docName, patName, treatmentType, cost);
+        treatments.add(aTreatment);
+    }
 
     public void doctorDisplay() {
         for(Doctor aDoctor : doctors) {
@@ -299,6 +321,14 @@ public class MedicalClinicSystem {
         }    
         System.out.println("Returning to menu");
         
+    }
+
+    public void treatmentDisplay() {
+        for(Treatment aTreatment : treatments) {
+            
+            System.out.printf("%n %s %n", aTreatment.toString());
+
+        }
     }
 
 }
