@@ -1,7 +1,5 @@
 package mcs;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
+
 import java.util.Scanner;
 public class Doctor extends Person implements Treatable{
     // Data members (Fields)
@@ -104,7 +102,6 @@ public class Doctor extends Person implements Treatable{
                         break;
                 }
             }
-            input.close();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

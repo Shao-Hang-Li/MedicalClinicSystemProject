@@ -8,10 +8,12 @@ public enum MenuOption {
     ADD_DOCTOR(1, "Add a new Doctor"),
     ADD_PATIENT(2, "Add a new Patient"),
     DISPLAY_DOCTOR_INFO(3, "Display Doctor Information"),
-    DISPLAY_PATIENT_INFO(4, "Display Patient Information"),
-    ADD_TREATMENT(5, "Add a Treatment"),
-    VIEW_TREATMENT_DETAILS(6, "View Treatment DETAILS"),
-    EXIT(7, "Exit THE Medical Clinic System");
+    UPDATE_DOCTOR_INFO(4, "Update Doctor Information"),
+    DISPLAY_PATIENT_INFO(5, "Display Patient Information"),
+    UPDATE_PATIENT_INFO(6, "Update Patient Information"),
+    ADD_TREATMENT(7, "Add a Treatment"),
+    VIEW_TREATMENT_DETAILS(8, "View Treatment DETAILS"),
+    EXIT(9, "Exit THE Medical Clinic System");
 
     // data members (fields)
     private final int value;
