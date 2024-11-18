@@ -38,7 +38,7 @@ public class MedicalClinicSystem {
             switch (selectedOption) {
                 case ADD_DOCTOR -> mcs.addDoctor();
                 case ADD_PATIENT -> mcs.addPatient();
-                case DISPLAY_DOCTOR_INFO -> System.out.println("Display Doctor Info...");
+                case DISPLAY_DOCTOR_INFO -> mcs.doctorDisplay();
                 case DISPLAY_PATIENT_INFO -> System.out.println("Display Patient Info...");
                 case ADD_TREATMENT -> System.out.println("Add a new Treatment...");
                 case VIEW_TREATMENT_DETAILS -> System.out.println("View Treatment Details...");
@@ -280,5 +280,25 @@ public class MedicalClinicSystem {
         Patient aPatient = new Patient(name, dateOfBirth, phoneNumber, address, insuranceCompany, medicalHistory);
         patients.add(aPatient);
     }    
+
+    public void doctorDisplay() {
+        for(Doctor aDoctor : doctors) {
+
+            System.out.printf("%n %s %n", aDoctor.toString());
+            System.out.println();
+            
+        }
+        System.out.println("Returning to menu");
+    }
+
+    public void patientDisplay() {
+        for(Patient aPatient : patients) {
+
+            System.out.printf("%n %s %n", aPatient.toString());
+            System.out.println();
+        }    
+        System.out.println("Returning to menu");
+        
+    }
 
 }

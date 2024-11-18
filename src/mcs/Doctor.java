@@ -121,7 +121,7 @@ public class Doctor extends Person implements Treatable{
     // Return String representation of the Doctor object
     @Override
     public String toString() {
-        return String.format("Name: %s %nSpecialty: %s %nYears of Experience: %d", getName(), specialty,
+        return String.format("%s %nSpecialty: %s %nYears of Experience: %d", super.toString(), specialty,
                 yearsOfExperience);
     }
 }
