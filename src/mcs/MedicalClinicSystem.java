@@ -121,14 +121,13 @@ public class MedicalClinicSystem {
                 String [] line = aLine.split(",");      //Separate String by comma and store into a list
                 //access each data from the list by index
                 String treatmentID = line[0];
-                //we can use Integer.parseInt for type conversion
-                Date date = new Date(Integer.valueOf(line[1]), Integer.valueOf(line[2]), Integer.valueOf(line[3]));
+                Date date = new Date(Integer.parseInt(line[1]), Integer.parseInt(line[2]), Integer.parseInt(line[3]));
                 String doctorName = line[4];
                 Doctor theDoc = findDoctorByName(doctorName);
                 String patientName = line[5];
                 Patient thePatient = findPatientByName(patientName);
                 String treatmentType = line[6];
-                double cost = Double.valueOf(line[7]);
+                double cost = Double.parseDouble(line[7]);
                 //now create a patient object
                 Treatment aTreatment = new Treatment(treatmentID, date, theDoc, thePatient, treatmentType, cost);
                 treatments.add(aTreatment);     //store into the ArrayList
@@ -151,12 +150,11 @@ public class MedicalClinicSystem {
                 String [] line = aLine.split(",");      //Separate String by comma and store into a list
                 //access each data from the list by index
                 String name = line[0];
-                //we can use Integer.parseInt for type conversion
-                Date dateOfBirth = new Date(Integer.valueOf(line[1]), Integer.valueOf(line[2]), Integer.valueOf(line[3]));
+                Date dateOfBirth = new Date(Integer.parseInt(line[1]), Integer.parseInt(line[2]), Integer.parseInt(line[3]));
                 String phoneNumber = line[4];
                 String address = line[5];
                 String specialty = line[6];
-                int yearsOfExperience = Integer.valueOf(line[7]);
+                int yearsOfExperience = Integer.parseInt(line[7]);
                 //now create a patient object
                 Doctor aDoctor = new Doctor(name, dateOfBirth, phoneNumber, address, specialty, yearsOfExperience);
                 doctors.add(aDoctor);     //store into the ArrayList
@@ -179,8 +177,7 @@ public class MedicalClinicSystem {
                 String [] line = aLine.split(",");      //Separate String by comma and store into a list
                 //access each data from the list by index
                 String name = line[0];
-                //we can use Integer.parseInt for type conversion
-                Date dateOfBirth = new Date(Integer.valueOf(line[1]), Integer.valueOf(line[2]), Integer.valueOf(line[3]));
+                Date dateOfBirth = new Date(Integer.parseInt(line[1]), Integer.parseInt(line[2]), Integer.parseInt(line[3]));
                 String phoneNumber = line[4];
                 String address = line[5];
                 String insuranceCompany = line[6];
