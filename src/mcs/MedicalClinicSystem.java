@@ -1,5 +1,6 @@
 package mcs;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ public class MedicalClinicSystem {
     public static void main(String[] args) {
         MedicalClinicSystem mcs = new MedicalClinicSystem();
         Scanner console = new Scanner(System.in);
+        mcs.readAll();
         while (true) {
 
             for (MenuOption menuOption : MenuOption.values()) {
@@ -43,6 +45,7 @@ public class MedicalClinicSystem {
                 case ADD_TREATMENT -> System.out.println("Add a new Treatment...");
                 case VIEW_TREATMENT_DETAILS -> System.out.println("View Treatment Details...");
                 case EXIT -> {
+                    mcs.saveAll();
                     System.out.println("Exiting Medical Clinic System, Have a Nice Day.");
                     console.close();
                     return;
@@ -111,7 +114,8 @@ public class MedicalClinicSystem {
      */
     public void readTreatmentFromFile() {
         try{
-            Scanner reader = new Scanner("Treatment.txt");
+            File file = new File("Treatment.txt");
+            Scanner reader = new Scanner(file);
             while (reader.hasNextLine()){
                 String aLine = reader.nextLine();
                 String [] line = aLine.split(",");      //Separate String by comma and store into a list
@@ -129,7 +133,6 @@ public class MedicalClinicSystem {
                 Treatment aTreatment = new Treatment(treatmentID, date, theDoc, thePatient, treatmentType, cost);
                 treatments.add(aTreatment);     //store into the ArrayList
             }
-            reader.close();
         }
         catch (Exception e){
             System.out.println(e);
@@ -141,7 +144,8 @@ public class MedicalClinicSystem {
      */
     public void readDoctorFromFile() {
         try{
-            Scanner reader = new Scanner("Doctor.txt");
+            File file = new File("Doctor.txt");
+            Scanner reader = new Scanner(file);
             while (reader.hasNextLine()){
                 String aLine = reader.nextLine();
                 String [] line = aLine.split(",");      //Separate String by comma and store into a list
@@ -157,7 +161,6 @@ public class MedicalClinicSystem {
                 Doctor aDoctor = new Doctor(name, dateOfBirth, phoneNumber, address, specialty, yearsOfExperience);
                 doctors.add(aDoctor);     //store into the ArrayList
             }
-            reader.close();
         }
         catch (Exception e){
             System.out.println(e);
@@ -169,7 +172,8 @@ public class MedicalClinicSystem {
      */
     public void readPatientFromFile() {
         try{
-            Scanner reader = new Scanner("Patient.txt");
+            File file = new File("Patient.txt");
+            Scanner reader = new Scanner(file);
             while (reader.hasNextLine()){
                 String aLine = reader.nextLine();
                 String [] line = aLine.split(",");      //Separate String by comma and store into a list
@@ -185,7 +189,6 @@ public class MedicalClinicSystem {
                 Patient aPatient = new Patient(name, dateOfBirth, phoneNumber, address, insuranceCompany, medicalHistory);
                 patients.add(aPatient);     //store into the ArrayList
             }
-            reader.close();
         }
         catch (Exception e){
             System.out.println(e);
