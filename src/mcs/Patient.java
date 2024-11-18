@@ -138,6 +138,6 @@ public class Patient extends Person implements Treatable{
     // Return String representation of the Patient object
     @Override
     public String toString() {
-        return String.format("%s %nInsurance company: %s %nMedical history: %s", super.toString(), insuranceCompany, medicalHistory);
+        return String.format("%s %n Insurance company: %s %n Medical history: %s", super.toString(), insuranceCompany, medicalHistory);
     }
 }
