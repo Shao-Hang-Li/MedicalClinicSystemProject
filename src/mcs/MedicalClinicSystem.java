@@ -326,7 +326,9 @@ public class MedicalClinicSystem {
 
         }
     }
-
+    /**
+     * the method prompts the user to enter a name and calls update info for a patient class object, and modifies the object
+     */
     public void updateDoctor(){
         System.out.println("Please enter doctor's name: ");
         String name = scanner.nextLine();
@@ -339,6 +341,9 @@ public class MedicalClinicSystem {
         }
     }
 
+    /**
+     * the method prompts the user to enter a name and calls update info for a patient class object, and modifies the object
+     */
     public void updatePatient(){
         System.out.println("Please enter patient's name: ");
         String name = scanner.nextLine();
