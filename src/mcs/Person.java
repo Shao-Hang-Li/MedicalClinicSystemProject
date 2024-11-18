@@ -66,7 +66,7 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return String.format("Name: %s %nDate of birth: %s %nPhone number: %s %nAddress: %s", name, dateOfBirth,
+        return String.format("%s %n Date of birth: %s %n Phone number: %s %n Address: %s", name, dateOfBirth,
                 phoneNumber, address);
     }
 }

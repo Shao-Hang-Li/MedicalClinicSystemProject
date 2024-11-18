@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 // Modify as necessary
 // References: MenuOptionTester.java, Java_II_HOLs_10
@@ -322,7 +323,7 @@ public class MedicalClinicSystem {
     public void treatmentDisplay() {
         for(Treatment aTreatment : treatments) {
             
-            System.out.printf("%n %s %n", aTreatment.toString());
+            System.out.printf("%n %s %n %n", aTreatment.toString());
 
         }
     }
