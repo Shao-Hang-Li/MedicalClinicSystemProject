@@ -1,7 +1,4 @@
 package mcs;
-
-import java.time.LocalDateTime;
-
 // followed p.5 format example for Person class
 public abstract class Person {
 

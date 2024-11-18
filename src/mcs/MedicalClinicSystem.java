@@ -41,7 +41,9 @@ public class MedicalClinicSystem {
                 case ADD_DOCTOR -> mcs.addDoctor();
                 case ADD_PATIENT -> mcs.addPatient();
                 case DISPLAY_DOCTOR_INFO -> mcs.doctorDisplay();
+                case UPDATE_DOCTOR_INFO -> mcs.updateDoctor();
                 case DISPLAY_PATIENT_INFO -> mcs.patientDisplay();
+                case UPDATE_PATIENT_INFO -> mcs.updatePatient();
                 case ADD_TREATMENT -> mcs.addTreatment();
                 case VIEW_TREATMENT_DETAILS -> mcs.treatmentDisplay();
                 case EXIT -> {
@@ -88,7 +90,7 @@ public class MedicalClinicSystem {
      */
     public Doctor findDoctorByName(String name) {
         for (Doctor doctor : doctors) {
-            if (doctor.getName().equals(name)) {
+            if ((doctor.getName()).equalsIgnoreCase(name)) {
                 return doctor;
             }
         }
@@ -102,7 +104,7 @@ public class MedicalClinicSystem {
      */
     public Patient findPatientByName(String name) {
         for (Patient patient : patients) {
-            if (patient.getName().equals(name)) {
+            if ((patient.getName()).equalsIgnoreCase(name)) {
                 return patient;
             }
         }
@@ -322,6 +324,30 @@ public class MedicalClinicSystem {
             
             System.out.printf("%n %s %n", aTreatment.toString());
 
+        }
+    }
+
+    public void updateDoctor(){
+        System.out.println("Please enter doctor's name: ");
+        String name = scanner.nextLine();
+        Doctor aDoctor = findDoctorByName(name);
+        if (aDoctor != null) {
+            aDoctor.updateInfo();
+        }
+        else{
+            System.out.println("Doctor not found.");
+        }
+    }
+
+    public void updatePatient(){
+        System.out.println("Please enter patient's name: ");
+        String name = scanner.nextLine();
+        Patient aPatient = findPatientByName(name);
+        if (aPatient != null) {
+            aPatient.updateInfo();
+        }
+        else{
+            System.out.println("Patient not found.");
         }
     }
 

@@ -1,9 +1,5 @@
 package mcs;
 
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Treatment implements Treatable{
     //data members
