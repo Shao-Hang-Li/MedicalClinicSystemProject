@@ -131,7 +131,6 @@ public class MedicalClinicSystem {
                 //now create a patient object
                 Treatment aTreatment = new Treatment(treatmentID, date, theDoc, thePatient, treatmentType, cost);
                 treatments.add(aTreatment);     //store into the ArrayList
-                reader.close();
             }
         }
         catch (Exception e){
@@ -159,7 +158,6 @@ public class MedicalClinicSystem {
                 //now create a patient object
                 Doctor aDoctor = new Doctor(name, dateOfBirth, phoneNumber, address, specialty, yearsOfExperience);
                 doctors.add(aDoctor);     //store into the ArrayList
-                reader.close();
             }
         }
         catch (Exception e){
@@ -187,7 +185,6 @@ public class MedicalClinicSystem {
                 //now create a patient object
                 Patient aPatient = new Patient(name, dateOfBirth, phoneNumber, address, insuranceCompany, medicalHistory);
                 patients.add(aPatient);     //store into the ArrayList
-                reader.close();
             }
         }
         catch (Exception e){
@@ -206,7 +203,6 @@ public class MedicalClinicSystem {
                 writer.printf("%s,%d,%d,%d,%s,%s,%s,%s%n", patient.getName(), dateOfBirth.getDay(), dateOfBirth.getMonth(), dateOfBirth.getYear()
                         , patient.getPhoneNumber(), patient.getAddress(), patient.getInsuranceCompany(), patient.getMedicalHistory());
             }
-            writer.close();
         }catch (FileNotFoundException e) {
             System.out.println("File not found.");
         }
@@ -223,7 +219,6 @@ public class MedicalClinicSystem {
                 writer.printf("%s,%d,%d,%d,%s,%s,%s,%d%n", doctor.getName(), dateOfBirth.getDay(), dateOfBirth.getMonth(), dateOfBirth.getYear()
                         , doctor.getPhoneNumber(), doctor.getAddress(), doctor.getSpecialty(), doctor.getYearsOfExperience());
             }
-            writer.close();
         }catch (FileNotFoundException e) {
             System.out.println("File not found.");
         }
@@ -241,7 +236,6 @@ public class MedicalClinicSystem {
                 writer.printf("%s,%d,%d,%d,%s,%s,%s,%.2f%n", treat.getTreatmentID(), date.getDay(), date.getMonth(),
                         date.getYear(), treat.getDoctor().getName(), treat.getPatient().getName(), treat.getTreatmentType(), treat.getCost());
             }
-            writer.close();
         }catch (FileNotFoundException e) {
             System.out.println("File not found.");
         }
@@ -269,16 +263,16 @@ public class MedicalClinicSystem {
     public void addPatient() {
         System.out.println("Enter Patient's name");
         String name = scanner.nextLine();
-        System.out.println("Enter Patient's date of birth starting from date to year");
+        System.out.println("Enter Patient's date of birth starting from date to year (DD MM YYYY)");
         Date dateOfBirth = new Date(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
         scanner.nextLine();
         System.out.println("Enter Patient's phone number");
         String phoneNumber = scanner.nextLine();
         System.out.println("Enter Patient's Address");
         String address = scanner.nextLine();
-        System.out.println("Enter Doctor's Specialty");
+        System.out.println("Enter the insurance company");
         String insuranceCompany = scanner.nextLine();
-        System.out.println("Enter Doctor's years of experience");
+        System.out.println("Enter the medical history");
         String medicalHistory = scanner.nextLine();
         Patient aPatient = new Patient(name, dateOfBirth, phoneNumber, address, insuranceCompany, medicalHistory);
         patients.add(aPatient);
