@@ -250,7 +250,7 @@ public class MedicalClinicSystem {
     public void addDoctor() {
         System.out.println("Enter Doctor's name");
         String name = scanner.nextLine();
-        System.out.println("Enter Doctor's date of birth starting from date to year");
+        System.out.println("Enter Doctor's date of birth starting from date to year (DD MM YYYY)");
         Date dateOfBirth = new Date(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
         scanner.nextLine();
         System.out.println("Enter Doctor's phone number");
