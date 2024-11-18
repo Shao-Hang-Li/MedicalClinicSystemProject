@@ -19,6 +19,7 @@ public class MedicalClinicSystem {
         MedicalClinicSystem mcs = new MedicalClinicSystem();
         Scanner console = new Scanner(System.in);
         mcs.readAll();
+        
         while (true) {
 
             for (MenuOption menuOption : MenuOption.values()) {
@@ -41,7 +42,7 @@ public class MedicalClinicSystem {
                 case ADD_DOCTOR -> mcs.addDoctor();
                 case ADD_PATIENT -> mcs.addPatient();
                 case DISPLAY_DOCTOR_INFO -> mcs.doctorDisplay();
-                case DISPLAY_PATIENT_INFO -> System.out.println("Display Patient Info...");
+                case DISPLAY_PATIENT_INFO -> mcs.patientDisplay();
                 case ADD_TREATMENT -> System.out.println("Add a new Treatment...");
                 case VIEW_TREATMENT_DETAILS -> System.out.println("View Treatment Details...");
                 case EXIT -> {
@@ -273,9 +274,9 @@ public class MedicalClinicSystem {
         String phoneNumber = scanner.nextLine();
         System.out.println("Enter Patient's Address");
         String address = scanner.nextLine();
-        System.out.println("Enter Doctor's Specialty");
+        System.out.println("Enter Patient's insurance company");
         String insuranceCompany = scanner.nextLine();
-        System.out.println("Enter Doctor's years of experience");
+        System.out.println("Enter Patient's medical history");
         String medicalHistory = scanner.nextLine();
         Patient aPatient = new Patient(name, dateOfBirth, phoneNumber, address, insuranceCompany, medicalHistory);
         patients.add(aPatient);
