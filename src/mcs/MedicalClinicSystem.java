@@ -288,7 +288,7 @@ public class MedicalClinicSystem {
         scanner.nextLine();
         System.out.println("Enter the doctor preforming the treatment");
         Doctor docName = findDoctorByName(scanner.nextLine());
-        System.out.println("Enter patient recieving treatment");
+        System.out.println("Enter patient receiving treatment");
         Patient patName = findPatientByName(scanner.nextLine());
         System.out.println("Enter the treatment type");
         String treatmentType = scanner.nextLine();
