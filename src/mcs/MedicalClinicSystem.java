@@ -154,7 +154,6 @@ public class MedicalClinicSystem {
                 //now create a patient object
                 Treatment aTreatment = new Treatment(treatmentID, date, theDoc, thePatient, treatmentType, cost);
                 treatments.add(aTreatment);     //store into the ArrayList
-                reader.close();
             }
         }
         catch (Exception e){
@@ -182,7 +181,6 @@ public class MedicalClinicSystem {
                 //now create a patient object
                 Doctor aDoctor = new Doctor(name, dateOfBirth, phoneNumber, address, specialty, yearsOfExperience);
                 doctors.add(aDoctor);     //store into the ArrayList
-                reader.close();
             }
         }
         catch (Exception e){
@@ -210,7 +208,6 @@ public class MedicalClinicSystem {
                 //now create a patient object
                 Patient aPatient = new Patient(name, dateOfBirth, phoneNumber, address, insuranceCompany, medicalHistory);
                 patients.add(aPatient);     //store into the ArrayList
-                reader.close();
             }
         }
         catch (Exception e){
@@ -396,6 +393,7 @@ public class MedicalClinicSystem {
             System.out.println("---- People Information -----");
             aTreatment.getDoctor().performTreatment();
             aTreatment.getPatient().performTreatment();
+            System.out.println("-----------------------------");
         }
         else{
             System.out.println("Treatment not found.");

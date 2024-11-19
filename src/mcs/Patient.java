@@ -74,6 +74,8 @@ public class Patient extends Person implements Treatable{
                         System.out.println("Enter the name of the patient");
                         String name = input.nextLine();
                         this.setName(name);
+                        System.out.println("Change have been saved");
+                        System.out.println("-----------------------------");
                         break;
                     case 2:
                         System.out.println("Enter the date of birth (DD MM YYYY)");
@@ -83,21 +85,29 @@ public class Patient extends Person implements Treatable{
                         input.nextLine();
                         Date newBirthday = new Date(day, month, year);
                         this.setDateOfBirth(newBirthday);
+                        System.out.println("Change have been saved");
+                        System.out.println("-----------------------------");
                         break;
                     case 3:
                         System.out.println("Enter the phone number of the patient");
                         String phoneNumber = input.nextLine();
                         this.setPhoneNumber(phoneNumber);
+                        System.out.println("Change have been saved");
+                        System.out.println("-----------------------------");
                         break;
                     case 4:
                         System.out.println("Enter the address of the patient");
                         String address = input.nextLine();
                         this.setAddress(address);
+                        System.out.println("Change have been saved");
+                        System.out.println("-----------------------------");
                         break;
                     case 5:
                         System.out.println("Enter the insurance company of the patient");
                         String Insurance = input.nextLine();
                         this.setInsuranceCompany(Insurance);
+                        System.out.println("Change have been saved");
+                        System.out.println("-----------------------------");
                         break;
                     case 6:
                         System.out.println("Please choose and option: \n1. Add to existing medical history\n2. Rewrite medical history");
@@ -107,11 +117,15 @@ public class Patient extends Person implements Treatable{
                             System.out.println("Enter the medical history of the patient");
                             String medicalHistory = input.nextLine();
                             this.addHistory(medicalHistory);
+                            System.out.println("Change have been saved");
+                            System.out.println("-----------------------------");
                         }
                         else if (option2 == 2){
                             System.out.println("Enter the medical history of the patient");
                             String medicalHistory = input.nextLine();
                             this.setMedicalHistory(medicalHistory);
+                            System.out.println("Change have been saved");
+                            System.out.println("-----------------------------");
                         }
                         else{
                             throw new IllegalArgumentException();
@@ -133,7 +147,7 @@ public class Patient extends Person implements Treatable{
      */
     @Override
     public void performTreatment(){
-        System.out.println("Patient" + this.getName() + "is receiving treatment");
+        System.out.println("Patient " + this.getName() + " is receiving treatment");
     }
     // Return String representation of the Patient object
     @Override
