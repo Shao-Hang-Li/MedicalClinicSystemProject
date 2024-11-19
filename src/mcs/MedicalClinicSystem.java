@@ -16,6 +16,8 @@ public class MedicalClinicSystem {
     ArrayList<Doctor> doctors = new ArrayList<>();
     ArrayList<Patient> patients = new ArrayList<>();
     ArrayList<Treatment> treatments = new ArrayList<>();
+    private MedicalClinicSystem receptionist;
+
 
     public static void main(String[] args) {
         MedicalClinicSystem mcs = new MedicalClinicSystem();
@@ -49,6 +51,7 @@ public class MedicalClinicSystem {
                 case ADD_TREATMENT -> mcs.addTreatment();
                 case VIEW_TREATMENT_DETAILS -> mcs.treatmentDisplay();
                 case PERFORM_TREATMENT -> mcs.performTreatments();
+                case SCHEDULE_APPOINTMENT -> mcs.scheduleAppointment();
                 case EXIT -> {
                     mcs.saveAll();
                     System.out.println("Exiting Medical Clinic System, Have a Nice Day.");
@@ -392,4 +395,22 @@ public class MedicalClinicSystem {
         }
     }
 
+    /**
+     *  This method helps the receptionist schedule an appointment for the patient
+     */
+    public void scheduleAppointment() {
+        System.out.println("Please enter the patient name: ");
+        String patientName = scanner.nextLine();
+        Patient aPatient = findPatientByName(patientName);
+
+        if (aPatient != null) {
+            System.out.println("Please enter the appointment date (DD-MM-YYYY): ");
+            String appointmentDate = scanner.nextLine();
+            receptionist.scheduleAppointment();
+
+        }
+        else {
+            System.out.println("Patient not found.");
+        }
+    }
 }

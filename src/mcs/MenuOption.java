@@ -14,6 +14,7 @@ public enum MenuOption {
     ADD_TREATMENT(7, "Add a Treatment"),
     VIEW_TREATMENT_DETAILS(8, "View Treatment DETAILS"),
     PERFORM_TREATMENT(9, "Perform Treatment"),
+    SCHEDULE_APPOINTMENT(10, "Schedule Appointment"),
     EXIT(10, "Exit THE Medical Clinic System");
 
     // data members (fields)

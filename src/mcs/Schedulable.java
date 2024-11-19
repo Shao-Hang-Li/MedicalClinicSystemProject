@@ -11,5 +11,5 @@ public interface Schedulable {
      * This method should return the schedule appointment for the specific object that implements this interface
      * @return the schedule appointment for the object
      */
-    public int getScheduleAppointment(); // no implementation
+    public void scheduleAppointment(); // no implementation
 }
