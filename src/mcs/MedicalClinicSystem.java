@@ -1,5 +1,6 @@
 package mcs;
 
+import java.awt.desktop.SystemSleepEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -47,6 +48,7 @@ public class MedicalClinicSystem {
                 case UPDATE_PATIENT_INFO -> mcs.updatePatient();
                 case ADD_TREATMENT -> mcs.addTreatment();
                 case VIEW_TREATMENT_DETAILS -> mcs.treatmentDisplay();
+                case PERFORM_TREATMENT -> mcs.performTreatments();
                 case EXIT -> {
                     mcs.saveAll();
                     System.out.println("Exiting Medical Clinic System, Have a Nice Day.");
@@ -107,6 +109,20 @@ public class MedicalClinicSystem {
         for (Patient patient : patients) {
             if ((patient.getName()).equalsIgnoreCase(name)) {
                 return patient;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * The method searches and returns a treatment by ID
+     * @param id treatment ID
+     * @return treatment object
+     */
+    public Treatment findTreatmentByID(String id) {
+        for (Treatment treatment : treatments) {
+            if ((treatment.getTreatmentID()).equalsIgnoreCase(id)) {
+                return treatment;
             }
         }
         return null;
@@ -354,6 +370,25 @@ public class MedicalClinicSystem {
         }
         else{
             System.out.println("Patient not found.");
+        }
+    }
+
+    /**
+     * the method shows the info of performing treatment. Uses polymorphism for each class
+     */
+    public void performTreatments(){
+        System.out.println("Please enter treatment ID: ");
+        String treatmentID = scanner.nextLine();
+        Treatment aTreatment = findTreatmentByID(treatmentID);
+        if (aTreatment != null) {
+            aTreatment.performTreatment();
+            System.out.println(aTreatment.toString());
+            System.out.println("---- People Information -----");
+            aTreatment.getDoctor().performTreatment();
+            aTreatment.getPatient().performTreatment();
+        }
+        else{
+            System.out.println("Treatment not found.");
         }
     }
 
