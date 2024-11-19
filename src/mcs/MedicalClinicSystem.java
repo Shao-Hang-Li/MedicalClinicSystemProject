@@ -8,7 +8,21 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 /**
+ * This is the main method. It is used as to run everything
  * 
+ * To run everything it uses a menu, which is an enum.
+ * @author Qi He, Shao Hang Li, John Nicholas Goettisheim.
+ * @version 1.0
+ * @since 15-11-2024
+ * @see Date
+ * @see Doctor
+ * @see MenuOption
+ * @see Patient
+ * @see Person
+ * @see Receptionist
+ * @see Schedulable
+ * @see Treatable
+ * @see Treatment
  */
 public class MedicalClinicSystem {
 
@@ -155,6 +169,7 @@ public class MedicalClinicSystem {
                 Treatment aTreatment = new Treatment(treatmentID, date, theDoc, thePatient, treatmentType, cost);
                 treatments.add(aTreatment);     //store into the ArrayList
             }
+            reader.close();
         }
         catch (Exception e){
             System.out.println(e);
@@ -182,6 +197,7 @@ public class MedicalClinicSystem {
                 Doctor aDoctor = new Doctor(name, dateOfBirth, phoneNumber, address, specialty, yearsOfExperience);
                 doctors.add(aDoctor);     //store into the ArrayList
             }
+            reader.close();
         }
         catch (Exception e){
             System.out.println(e);
@@ -209,6 +225,7 @@ public class MedicalClinicSystem {
                 Patient aPatient = new Patient(name, dateOfBirth, phoneNumber, address, insuranceCompany, medicalHistory);
                 patients.add(aPatient);     //store into the ArrayList
             }
+            reader.close();
         }
         catch (Exception e){
             System.out.println(e);

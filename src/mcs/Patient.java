@@ -2,7 +2,20 @@ package mcs;
 
 
 import java.util.Scanner;
-
+/**
+ * This is the patient subclass. It extends from the person class
+ * 
+ * It is used to get and display the patient information for the hospital
+ * @see Date
+ * @see Doctor
+ * @see MedicalClinicSystem
+ * @see Patient
+ * @see Person
+ * @see Receptionist
+ * @see Schedulable
+ * @see Treatable
+ * @see Treatment
+ */
 public class Patient extends Person implements Treatable{
 
     // Data members (fields)
