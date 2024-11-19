@@ -1,5 +1,18 @@
 package mcs;
-// followed p.5 format example for Person class
+/**
+ * This is the person abstract class. It is used as the default class for patients and doctor
+ * 
+ * It stores basic information like name and date of birth which can be transfered to the subclasses.
+ * @see Date
+ * @see Doctor
+ * @see MedicalClinicSystem
+ * @see MenuOption
+ * @see Patient
+ * @see Receptionist
+ * @see Schedulable
+ * @see Treatable
+ * @see Treatment
+ */
 public abstract class Person {
 
     // Data members (fields)
