@@ -16,7 +16,7 @@ public class MedicalClinicSystem {
     ArrayList<Doctor> doctors = new ArrayList<>();
     ArrayList<Patient> patients = new ArrayList<>();
     ArrayList<Treatment> treatments = new ArrayList<>();
-    private MedicalClinicSystem receptionist;
+    private Receptionist receptionist;
 
 
     public static void main(String[] args) {
@@ -404,13 +404,13 @@ public class MedicalClinicSystem {
         Patient aPatient = findPatientByName(patientName);
 
         if (aPatient != null) {
-            System.out.println("Please enter the appointment date (DD-MM-YYYY): ");
+            System.out.println("Please enter the appointment date (DD MM YYYY): ");
             String appointmentDate = scanner.nextLine();
             receptionist.scheduleAppointment();
 
         }
         else {
-            System.out.println("Patient not found.");
+            System.out.println("There are no patient with the above name");
         }
     }
 }

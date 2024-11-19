@@ -106,6 +106,6 @@ public class Treatment implements Treatable{
     @Override
     public String toString(){
         return "Treatment ID: " + treatmentID + "\n Date: " + date + "\n Doctor: " + doctor + "\n Patient: " + patient
-                + "\n Treatment Type: " + treatmentType + "\n Cost: $" + cost;
+                + "\n Treatment Type: " + treatmentType + "\n Cost: $" + cost + "\n";
     }//end method
 }

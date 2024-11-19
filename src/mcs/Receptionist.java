@@ -12,10 +12,14 @@ public class Receptionist extends Person implements Schedulable {
         System.out.println(getName() + " is scheduling an appointment for the patient.");
     }
 
-    @Override
     public void updateInfo() {
-        System.out.println(getName() + " is scheduling an appointment for the patient.");
+        // Implementation of the abstract method from Person class
+        // You can define how the receptionist updates their information here.
+        System.out.println(getName() + " is updating their personal information.");
     }
 
+    public void displayInfo() {
+        System.out.println(getName() + " is displaying their personal information.");
+    }
 }
 
