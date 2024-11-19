@@ -26,7 +26,7 @@ public enum MenuOption {
     VIEW_TREATMENT_DETAILS(8, "View Treatment DETAILS"),
     PERFORM_TREATMENT(9, "Perform Treatment"),
     SCHEDULE_APPOINTMENT(10, "Schedule Appointment"),
-    EXIT(11, "Exit THE Medical Clinic System");
+    EXIT(11, "Exit Medical Clinic System");
 
     // data members (fields)
     private final int value;
