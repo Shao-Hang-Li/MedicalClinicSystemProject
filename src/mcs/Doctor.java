@@ -83,6 +83,8 @@ public class Doctor extends Person implements Treatable{
                         System.out.println("Enter the name of the doctor");
                         String name = input.nextLine();
                         this.setName(name);
+                        System.out.println("Change have been saved");
+                        System.out.println("-----------------------------");
                         break;
                     case 2:
                         System.out.println("Enter the date of birth (DD MM YYYY)");
@@ -92,27 +94,37 @@ public class Doctor extends Person implements Treatable{
                         input.nextLine();
                         Date newBirthday = new Date(day, month, year);
                         this.setDateOfBirth(newBirthday);
+                        System.out.println("Change have been saved");
+                        System.out.println("-----------------------------");
                         break;
                     case 3:
                         System.out.println("Enter the phone number of the doctor");
                         String phoneNumber = input.nextLine();
                         this.setPhoneNumber(phoneNumber);
+                        System.out.println("Change have been saved");
+                        System.out.println("-----------------------------");
                         break;
                     case 4:
                         System.out.println("Enter the address of the doctor");
                         String address = input.nextLine();
                         this.setAddress(address);
+                        System.out.println("Change have been saved");
+                        System.out.println("-----------------------------");
                         break;
                     case 5:
                         System.out.println("Enter the specialty of the doctor");
                         String specialty = input.nextLine();
                         this.setSpecialty(specialty);
+                        System.out.println("Change have been saved");
+                        System.out.println("-----------------------------");
                         break;
                     case 6:
                         System.out.println("Enter the years of experience of the doctor");
                         int yearsOfExperience = input.nextInt();
                         input.nextLine();
                         this.setYearsOfExperience(yearsOfExperience);
+                        System.out.println("Change have been saved");
+                        System.out.println("-----------------------------");
                         break;
                 }
             }
@@ -125,7 +137,7 @@ public class Doctor extends Person implements Treatable{
      * The method prints the performed treatment for the specific object
      */
     public void performTreatment(){
-        System.out.println("Doctor" + this.getName() + "is performing treatment");
+        System.out.println("Doctor " + this.getName() + " is performing treatment");
     }
 
 
