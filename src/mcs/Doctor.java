@@ -1,11 +1,26 @@
 package mcs;
 
 import java.util.Scanner;
+
+/**
+ * This is the doctor class. It is a subclass of person refering to the doctors of the hospital
+ * 
+ * this class is used to add doctors and implement them into treatments
+ * @see Date
+ * @see MedicalClinicSystem
+ * @see MenuOption
+ * @see Patient
+ * @see Person
+ * @see Receptionist
+ * @see Schedulable
+ * @see Treatable
+ * @see Treatment
+ */
 public class Doctor extends Person implements Treatable{
     // Data members (Fields)
     private String specialty;
     private int yearsOfExperience;
-
+    Scanner input = new Scanner(System.in);
     // Constructor with parameters
     public Doctor(String name, Date dateOfBirth, String phoneNumber, String address, String specialty,
                   int yearsOfExperience) {
@@ -51,7 +66,6 @@ public class Doctor extends Person implements Treatable{
     @Override
     public void updateInfo(){
         int option = 0;
-        Scanner input = new Scanner(System.in);
         try {
             while (option != 7){
                 System.out.println("Please specify the info you wish to update");

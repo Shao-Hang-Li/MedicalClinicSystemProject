@@ -1,22 +1,38 @@
 package mcs;
 
-// I took the Date.java class that I made in the previous homework.
-// I added the verification part after the class yesterday by following the reference of BasePlusCommissionEmployee.java
-// Java_II_HOLs_06
+/**
+ * This is the date class. It is used to make dates in most of the other java classes.
+ * @see Doctor
+ * @see MedicalClinicSystem
+ * @see MenuOption
+ * @see Patient
+ * @see Person
+ * @see Receptionist
+ * @see Schedulable
+ * @see Treatable
+ * @see Treatment
+ */
 public class Date {
     // declare data members (field)
     private int day;
     private int month;
     private int year;
 
-    // default constructor
+    /**
+     * Default constructor for date
+     */
     public Date() {
         day = 0;
         month = 0;
         year = 0;
     }
 
-    // constructor with parameters
+    /**
+     * Constructor with parameters for date
+     * @param day day of specified date
+     * @param month month of specified date
+     * @param year year of specified date
+     */
     public Date(int day, int month, int year) {
         // validate day (day can be 28, 30 or 31, for this example I will put 31 to be simple)
         if (day > 0 && day <= 31) {
@@ -38,23 +54,37 @@ public class Date {
         this.year = year;
     }
 
-    // mutators and accessors
+    /**
+     * getter for day
+     * @return day
+     */
     public int getDay() {
         return day;
     }
-
+    /**
+     * getter for month
+     * @return month
+     */
     public int getMonth() {
         return month;
     }
-
+    /**
+     * getter for year
+     * @return year
+     */
     public int getYear() {
         return year;
     }
-
+    /**
+     * setter for year
+     * @param year year
+     */
     public void setYear(int year) {
         this.year = year;
     }
-
+    /**
+     * String to set display for dates
+     */
     @Override
     public String toString() {
         return day + "/" + month + "/" + year;

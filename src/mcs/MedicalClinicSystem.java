@@ -7,8 +7,9 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-// Modify as necessary
-// References: MenuOptionTester.java, Java_II_HOLs_10
+/**
+ * 
+ */
 public class MedicalClinicSystem {
 
     Scanner scanner = new Scanner(System.in);
@@ -153,6 +154,7 @@ public class MedicalClinicSystem {
                 //now create a patient object
                 Treatment aTreatment = new Treatment(treatmentID, date, theDoc, thePatient, treatmentType, cost);
                 treatments.add(aTreatment);     //store into the ArrayList
+                reader.close();
             }
         }
         catch (Exception e){
@@ -180,6 +182,7 @@ public class MedicalClinicSystem {
                 //now create a patient object
                 Doctor aDoctor = new Doctor(name, dateOfBirth, phoneNumber, address, specialty, yearsOfExperience);
                 doctors.add(aDoctor);     //store into the ArrayList
+                reader.close();
             }
         }
         catch (Exception e){
@@ -207,6 +210,7 @@ public class MedicalClinicSystem {
                 //now create a patient object
                 Patient aPatient = new Patient(name, dateOfBirth, phoneNumber, address, insuranceCompany, medicalHistory);
                 patients.add(aPatient);     //store into the ArrayList
+                reader.close();
             }
         }
         catch (Exception e){
@@ -222,13 +226,14 @@ public class MedicalClinicSystem {
             PrintWriter writer = new PrintWriter("Patient.txt");
             for (Patient patient:patients){
                 Date dateOfBirth = patient.getDateOfBirth();
-                writer.printf("%s,%d,%d,%d,%s,%s,%s,%s%n", patient.getName(), dateOfBirth.getDay(), dateOfBirth.getMonth(), dateOfBirth.getYear()
-                        , patient.getPhoneNumber(), patient.getAddress(), patient.getInsuranceCompany(), patient.getMedicalHistory());
+                writer.printf("%s,%d,%d,%d,%s,%s,%s,%s%n", patient.getName(), dateOfBirth.getDay(), dateOfBirth.getMonth(), dateOfBirth.getYear(),
+                patient.getPhoneNumber(), patient.getAddress(), patient.getInsuranceCompany(), patient.getMedicalHistory());
             }
+            writer.close();
         }catch (FileNotFoundException e) {
             System.out.println("File not found.");
         }
-    }
+    }   
 
     /**
      * the method takes a Doctor ArrayList and write into a text file, with each piece of info seperated by comma
@@ -241,6 +246,7 @@ public class MedicalClinicSystem {
                 writer.printf("%s,%d,%d,%d,%s,%s,%s,%d%n", doctor.getName(), dateOfBirth.getDay(), dateOfBirth.getMonth(), dateOfBirth.getYear()
                         , doctor.getPhoneNumber(), doctor.getAddress(), doctor.getSpecialty(), doctor.getYearsOfExperience());
             }
+            writer.close();
         }catch (FileNotFoundException e) {
             System.out.println("File not found.");
         }
@@ -258,6 +264,7 @@ public class MedicalClinicSystem {
                 writer.printf("%s,%d,%d,%d,%s,%s,%s,%.2f%n", treat.getTreatmentID(), date.getDay(), date.getMonth(),
                         date.getYear(), treat.getDoctor().getName(), treat.getPatient().getName(), treat.getTreatmentType(), treat.getCost());
             }
+            writer.close();
         }catch (FileNotFoundException e) {
             System.out.println("File not found.");
         }
