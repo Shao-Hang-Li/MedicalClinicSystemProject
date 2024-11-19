@@ -8,6 +8,7 @@ public class Patient extends Person implements Treatable{
     // Data members (fields)
     private String insuranceCompany;
     private String medicalHistory;
+    Scanner input = new Scanner(System.in);
 
     // Constructor with parameters
     public Patient (String name, Date dateOfBirth, String phoneNumber, String address, String insuranceCompany,
@@ -56,7 +57,6 @@ public class Patient extends Person implements Treatable{
     @Override
     public void updateInfo(){
         int option = 0;
-        Scanner input = new Scanner(System.in);
         try {
             while (option != 7){
                 System.out.println("Please specify the info you wish to update");
