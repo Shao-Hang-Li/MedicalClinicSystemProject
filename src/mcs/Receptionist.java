@@ -3,8 +3,8 @@ package mcs;
 public class Receptionist extends Person implements Schedulable {
     // Data members (fields)
 
-    public Receptionist(String name, Date dateOfBirth, String phoneNumber, String address) {
-        super(name, dateOfBirth, phoneNumber, address);
+    public Receptionist(String name) {
+        super(name);
     }
 
     @Override
@@ -12,14 +12,13 @@ public class Receptionist extends Person implements Schedulable {
         System.out.println(getName() + " is scheduling an appointment for the patient.");
     }
 
+    @Override
     public void updateInfo() {
-        // Implementation of the abstract method from Person class
-        // You can define how the receptionist updates their information here.
-        System.out.println(getName() + " is updating their personal information.");
+        System.out.println(getName() + " is updating the personal information of the person.");
     }
 
     public void displayInfo() {
-        System.out.println(getName() + " is displaying their personal information.");
+        System.out.println("Receptionist: " + getName());
     }
 }
 

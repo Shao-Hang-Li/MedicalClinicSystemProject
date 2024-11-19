@@ -369,7 +369,7 @@ public class MedicalClinicSystem {
     }
 
     /**
-     * the method prompts the user to enter a name and calls update info for a patient class object, and modifies the object
+     * the method prompts t e user to enter a name and calls update info for a patient class object, and modifies the object
      */
     public void updatePatient(){
         System.out.println("Please enter patient's name: ");
@@ -406,6 +406,9 @@ public class MedicalClinicSystem {
      *  This method helps the receptionist schedule an appointment for the patient
      */
     public void scheduleAppointment() {
+        System.out.println("Please enter the receptionist name:");
+        String receptionistName = scanner.nextLine();
+        this.receptionist = new Receptionist(receptionistName);
         System.out.println("Please enter the patient name: ");
         String patientName = scanner.nextLine();
         Patient aPatient = findPatientByName(patientName);

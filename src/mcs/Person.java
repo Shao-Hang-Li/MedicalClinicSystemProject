@@ -16,6 +16,11 @@ public abstract class Person {
         this.address = address;
     }
 
+    // Constructor with 1 parameter
+    public Person(String name) {
+        this.name = name;
+    }
+
     // Default constructor
     public Person() {
 
