@@ -105,7 +105,7 @@ public class Treatment implements Treatable{
     //to String method
     @Override
     public String toString(){
-        return "Treatment ID: " + treatmentID + "\n Date: " + date + "\n Doctor: " + doctor + "\n Patient: " + patient
+        return "Treatment ID: " + treatmentID + "\n Date (DD MM YYYY): " + date + "\n Doctor: " + doctor + "\n Patient: " + patient
                 + "\n Treatment Type: " + treatmentType + "\n Cost: $" + cost + "\n";
     }//end method
 }

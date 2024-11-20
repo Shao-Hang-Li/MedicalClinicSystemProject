@@ -1,5 +1,6 @@
 package mcs;
-
+// REFERENCES FOR THE MENUOPTIONS IN THIS ENUM AND IN THE MEDICALCLINICSYSTEM:
+// We implemented the in class notes: MenuOption.java and MenuOptionTester.java
 /**
  * This is the menu option enum. 
  * 

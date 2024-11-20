@@ -1,5 +1,6 @@
 package mcs;
 
+// References: I took this date class that I created from the past few homeworks.
 /**
  * This is the date class. It is used to make dates in most of the other java classes.
  * @see Doctor

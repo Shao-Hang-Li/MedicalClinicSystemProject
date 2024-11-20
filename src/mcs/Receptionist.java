@@ -14,22 +14,25 @@ package mcs;
  * @see Treatment
  */
 public class Receptionist extends Person implements Schedulable {
-    // Data members (fields)
-
+    // we used the one parameter constructor from Person
     public Receptionist(String name) {
         super(name);
     }
 
     @Override
     public void scheduleAppointment() {
-        System.out.println(getName() + " is scheduling an appointment for the patient.");
+        System.out.println(getName() + " is scheduling an appointment for the patient");
+    }
+
+
+    // THESE TWO METHODS ARE NOT CALLED except updateInfo()
+    // IT'S ONLY FOR THE METHOD TO WORK SINCE IT IS A SUB CLASS OF PERSON
+    @Override
+    public void updateInfo() {
+        System.out.println(getName() + " is updating the personal informations of the patient/doctor.");
     }
 
     @Override
-    public void updateInfo() {
-        System.out.println(getName() + " is updating the personal information of the person.");
-    }
-
     public void displayInfo() {
         System.out.println("Receptionist: " + getName());
     }

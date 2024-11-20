@@ -31,7 +31,8 @@ public class MedicalClinicSystem {
     ArrayList<Treatment> treatments = new ArrayList<>();
     private Receptionist receptionist;
 
-
+    // References: MenuOptionTester.java
+    // In class notes for the option part.
     public static void main(String[] args) {
         MedicalClinicSystem mcs = new MedicalClinicSystem();
         Scanner console = new Scanner(System.in);
@@ -416,10 +417,10 @@ public class MedicalClinicSystem {
     }
 
     /**
-     *  This method helps the receptionist schedule an appointment for the patient
+     *  This method helps the receptionist schedule an appointment for the patient by finding the patientName first
      */
     public void scheduleAppointment() {
-        System.out.println("Please enter the receptionist name:");
+        System.out.println("Please enter the receptionist name: ");
         String receptionistName = scanner.nextLine();
         this.receptionist = new Receptionist(receptionistName);
         System.out.println("Please enter the patient name: ");
@@ -427,10 +428,7 @@ public class MedicalClinicSystem {
         Patient aPatient = findPatientByName(patientName);
 
         if (aPatient != null) {
-            System.out.println("Please enter the appointment date (DD MM YYYY): ");
-            String appointmentDate = scanner.nextLine();
             receptionist.scheduleAppointment();
-
         }
         else {
             System.out.println("There are no patient with the above name");

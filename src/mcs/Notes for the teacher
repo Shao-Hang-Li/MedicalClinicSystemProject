@@ -1,0 +1,19 @@
+Due to the time constraint, we didn't want to change everything to make these work, but we were thinking about it a lot
+on how should we implement these.
+
+- FileWriter class to put all the switch case and file reader inside it, so we can manage it better.
+"Divide and Conquer" as you always say.
+Since putting the switch case inside the displayInfo() in the Doctor and Patient classes is not optimal at all. It
+should be separated.
+
+- This is also related to the above class. We also wanted to create the Receptionist that can access both the Doctor
+and the Patient information's, however; it was just too long and complicated, so we decided to remove that part.
+But it will be really interesting if done right.
+
+- Create an UNIQUE ID instead of searching by name for the MedicalClinicSystem class. Create a counter and add in all
+the unique ID. Unique ID for both the Patient and Doctor.
+
+- Also, we wanted to implement the things we learned in Monday about FileWriter, saving files and append, but we
+ already have a working code, so we didn't want to redo everything and change and risk having errors. Although, your
+ way of doing is more optimized and will improve the code readability and flexibility by a lot.
+
