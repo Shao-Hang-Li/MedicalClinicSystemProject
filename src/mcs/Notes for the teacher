@@ -17,3 +17,14 @@ the unique ID. Unique ID for both the Patient and Doctor.
  already have a working code, so we didn't want to redo everything and change and risk having errors. Although, your
  way of doing is more optimized and will improve the code readability and flexibility by a lot.
 
+- For the receptionist, we wanted to include 1-2 parameters for the interface Schedulable that takes the Date and the
+name of the patient, but it didn't work. The reason to take parameters is to give the name of the patient and the date
+of the appointment instead of just saying the receptionist has scheduled an appointment for a patient. It gives more
+informations about the appointment. However, at least, it looked like the demo you showed us, but we would have like to
+add more to it.
+
+In conclusion, we would have liked more time to try and implement all the methods we would like, but unfortunately,
+we realized too late after the presentation that there are so many things we could have tried.
+Just like everyone, I think everyone really want to have a robust system that can do many things, but due to own lacking
+abilities and knowledge, we were limited to what we could have done. Overall, it helped us understand more even if there
+were sub optimal parts in the program.
