@@ -9,7 +9,6 @@ import java.util.Scanner;
  * @see Date
  * @see Doctor
  * @see MedicalClinicSystem
- * @see Patient
  * @see Person
  * @see Receptionist
  * @see Schedulable
@@ -23,7 +22,15 @@ public class Patient extends Person implements Treatable{
     private String medicalHistory;
     Scanner input = new Scanner(System.in);
 
-    // Constructor with parameters
+    /**
+     * Constructor for patient
+     * @param name patient name
+     * @param dateOfBirth patient date of birth
+     * @param phoneNumber patient phone number
+     * @param address patient address
+     * @param insuranceCompany patient insurance company
+     * @param medicalHistory patient medical history
+     */
     public Patient (String name, Date dateOfBirth, String phoneNumber, String address, String insuranceCompany,
                     String medicalHistory) {
         // super class Person
@@ -33,19 +40,31 @@ public class Patient extends Person implements Treatable{
         this.medicalHistory = medicalHistory;
     }
 
-    // Mutators and accessors
+    /**
+     * getter for insurance company
+     * @return insurance company
+     */
     public String getInsuranceCompany() {
         return insuranceCompany;
     }
-
+    /**
+     * setter for insurance company
+     * @param insuranceCompany insurance company
+     */
     public void setInsuranceCompany(String insuranceCompany) {
         this.insuranceCompany = insuranceCompany;
     }
-
+    /**
+     * getter for medical history
+     * @return medical history
+     */
     public String getMedicalHistory() {
         return medicalHistory;
     }
-
+    /**
+     * setter for medical history
+     * @param medicalHistory medical history
+     */
     public void setMedicalHistory(String medicalHistory) {
         this.medicalHistory = medicalHistory;
     }
@@ -66,7 +85,9 @@ public class Patient extends Person implements Treatable{
         System.out.println(this);
     }
 
-    //called when user asks to update info, method will prompt user to enter corresponding info and update it
+    /**
+     * Method used for updating the information of a patient
+     */
     @Override
     public void updateInfo(){
         int option = 0;
@@ -162,7 +183,9 @@ public class Patient extends Person implements Treatable{
     public void performTreatment(){
         System.out.println("Patient " + this.getName() + " is receiving treatment");
     }
-    // Return String representation of the Patient object
+    /**
+     * Override for the toString method specific to patient
+     */
     @Override
     public String toString() {
         return String.format("%s %n Insurance company: %s %n Medical history: %s", super.toString(), insuranceCompany, medicalHistory);

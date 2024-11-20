@@ -21,7 +21,15 @@ public class Doctor extends Person implements Treatable{
     private String specialty;
     private int yearsOfExperience;
     Scanner input = new Scanner(System.in);
-    // Constructor with parameters
+    /**
+     * Constructor for doctor
+     * @param name doctor name
+     * @param dateOfBirth doctor date of birth
+     * @param phoneNumber doctor phone number
+     * @param address doctor address
+     * @param specialty doctor specialty
+     * @param yearsOfExperience doctor's years of experience
+     */
     public Doctor(String name, Date dateOfBirth, String phoneNumber, String address, String specialty,
                   int yearsOfExperience) {
         // Super class Person
@@ -31,19 +39,31 @@ public class Doctor extends Person implements Treatable{
         this.setYearsOfExperience(yearsOfExperience);    //setter with validation
     }
 
-    // Mutators and accessors
+    /**
+     * getter for specialty
+     * @return specialty
+     */
     public String getSpecialty() {
         return specialty;
     }
-
+    /**
+     * setter for specialty
+     * @param specialty specialty
+     */
     public void setSpecialty(String specialty) {
         this.specialty = specialty;
     }
-
+    /**
+     * getter for years of experience
+     * @return years of experience 
+     */
     public int getYearsOfExperience() {
         return yearsOfExperience;
     }
-
+    /**
+     * validator and setter for years of experience
+     * @param yearsOfExperience years of experience
+     */
     public void setYearsOfExperience(int yearsOfExperience) {
         // Validation for yearsOfExperience (can't be negative)
         if (yearsOfExperience < 0) {

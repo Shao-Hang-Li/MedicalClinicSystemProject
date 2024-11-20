@@ -5,6 +5,15 @@ package mcs;
  * The Treatable interface can show the treatment given to the patient by the doctor
  * Classes that implement this interface must provide an implementation of the "getPerformTreatment" method
  * which helps perform a treatment
+ * 
+ * @see Date
+ * @see Doctor
+ * @see MedicalClinicSystem
+ * @see Patient
+ * @see Person
+ * @see Receptionist
+ * @see Schedulable
+ * @see Treatment
  */
 public interface Treatable {
 
