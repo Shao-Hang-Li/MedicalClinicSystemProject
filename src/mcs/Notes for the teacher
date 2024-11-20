@@ -1,3 +1,11 @@
+UML LINK since the UML class diagram is too big:
+THE IMAGE IS TOO SMALL! PLZ CHECK THIS LINK FOR THE UML.
+https://lucid.app/lucidchart/e0d3c399-7fa7-41f2-8ee7-4ce7145e3a1f/edit?viewport_loc=-2155%2C1916%2C8175%2C3798%2CHWEp-
+vi-RSFO&invitationId=inv_9a16805c-0f36-41f5-b0b3-2027fefa56ea
+
+Github link:
+https://github.com/Shao-Hang-Li/MedicalClinicSystemProject
+
 Due to the time constraint, we didn't want to change everything to make these work, but we were thinking about it a lot
 on how should we implement these.
 
@@ -15,13 +23,15 @@ the unique ID. Unique ID for both the Patient and Doctor.
 
 - Also, we wanted to implement the things we learned in Monday about FileWriter, saving files and append, but we
  already have a working code, so we didn't want to redo everything and change and risk having errors. Although, your
- way of doing is more optimized and will improve the code readability and flexibility by a lot.
+ way of doing is more optimized and will improve the code readability and flexibility by a lot. Although we used to use
+ valueOf, which we changed to parseInt instead.
 
 - For the receptionist, we wanted to include 1-2 parameters for the interface Schedulable that takes the Date and the
 name of the patient, but it didn't work. The reason to take parameters is to give the name of the patient and the date
 of the appointment instead of just saying the receptionist has scheduled an appointment for a patient. It gives more
 informations about the appointment. However, at least, it looked like the demo you showed us, but we would have like to
-add more to it.
+add more to it. Also, we would have wanted to make it an arrayList since it's not only 1 receptionist, but it made our
+code crash, so we decided to just instanciate it.
 
 In conclusion, we would have liked more time to try and implement all the methods we would like, but unfortunately,
 we realized too late after the presentation that there are so many things we could have tried.

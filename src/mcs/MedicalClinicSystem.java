@@ -29,7 +29,10 @@ public class MedicalClinicSystem {
     ArrayList<Doctor> doctors = new ArrayList<>();
     ArrayList<Patient> patients = new ArrayList<>();
     ArrayList<Treatment> treatments = new ArrayList<>();
-    private Receptionist receptionist;
+    // We felt it was too complicated and we had to change too much to put Receptionist as an ArrayList, so we
+    // kept it simple and only declare an instance. Although the best way is still to create a list of receptionists
+    // since there are not only 1 receptionist in the system. It is still 1 action.
+    Receptionist receptionist;
 
     // References: MenuOptionTester.java
     // In class notes for the option part.
@@ -432,6 +435,7 @@ public class MedicalClinicSystem {
         }
     }
 
+    // Here we should have done by Patient ID check the Notes for the teacher.
     /**
      *  This method helps the receptionist schedule an appointment for the patient by finding the patientName first
      */
