@@ -21,7 +21,13 @@ public abstract class Person {
     private String phoneNumber;
     private String address;
 
-    // Constructor with parameters
+    /**
+     * main constructor
+     * @param name person name
+     * @param dateOfBirth person date of birth
+     * @param phoneNumber person phone number
+     * @param address person address
+     */
     public Person(String name, Date dateOfBirth, String phoneNumber, String address) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
@@ -29,12 +35,17 @@ public abstract class Person {
         this.address = address;
     }
 
-    // Constructor with 1 parameter
+    /**
+     * alt constructor
+     * @param name person name
+     */
     public Person(String name) {
         this.name = name;
     }
 
-    // Default constructor
+    /**
+     * Default constructor for person
+     */
     public Person() {
 
         this.name = "";
@@ -43,45 +54,75 @@ public abstract class Person {
         this.address = "";
     }
 
-    // Mutators and accessors
+    /**
+     * getter for name
+     * @return name
+     */
     public String getName() {
         return name;
     }
-
+    /**
+     * setter for name
+     * @param name name
+     */
     public void setName(String name) {
         this.name = name;
     }
-
+    /**
+     * getter for date of birth
+     * @return date of birth
+     */
     public Date getDateOfBirth() {
         return dateOfBirth;
     }
-
+    /**
+     * setter for date of birth
+     * @param dateOfBirth date of birth
+     */
     public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
-
+    /**
+     * getter for phone number
+     * @return phone number
+     */
     public String getPhoneNumber() {
         return phoneNumber;
     }
-
+    /**
+     * setter for phone number
+     * @param phoneNumber phone number
+     */
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-
+    /**
+     * getter for address
+     * @return address
+     */
     public String getAddress() {
         return address;
     }
-
+    /**
+     * setter for address
+     * @param address address
+     */
     public void setAddress(String address) {
         this.address = address;
     }
 
-    //method to be implemented, used to display info of Person
+    /**
+     * abstract method for displaying info
+     */
     public abstract void displayInfo();
 
-    //called when user asks to update info, method will prompt user to enter corresponding info and update it
+    /**
+     * abstract method for updating info
+     */
     public abstract void updateInfo();
-
+    /**
+     * default toString for every person
+     */
     @Override
     public String toString() {
         return String.format("%s %n Date of birth: %s %n Phone number: %s %n Address: %s", name, dateOfBirth,

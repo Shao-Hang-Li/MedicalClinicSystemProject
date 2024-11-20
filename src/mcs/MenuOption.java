@@ -33,24 +33,36 @@ public enum MenuOption {
     private final int value;
     private final String description;
 
-    // constructor initializes the value and description
+    /**
+     * Constructor for menu option
+     * @param value menu option's value
+     * @param description menu option's description
+     */
     private MenuOption(int value, String description) {
         this.value = value;
         this.description = description;
     } // end constructor
 
-    // get value method
+    /**
+     * get value method
+     * @return value
+     */
     public int getValue() {
         return this.value;
     }
-    // det description
+    /**
+     * get description
+     * @return description
+     */
     public String getDescription() {
         return this.description;
     }
 
-    // method to get the MenuOption by its value
-    // fromInt(int i) method maps an integer to a MenuOption constant.
-    // if the input doesn't match any option, it returns null
+    /**
+     * Method to set up menu option with the right amount of options
+     * @param i number of options
+     * @return number of options
+     */
     public static MenuOption fromInt(int i) {
         for (MenuOption option : MenuOption.values()) {
             if (option.getValue() == i) {

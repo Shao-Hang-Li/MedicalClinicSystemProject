@@ -33,6 +33,10 @@ public class MedicalClinicSystem {
 
     // References: MenuOptionTester.java
     // In class notes for the option part.
+    /**
+     * Main method
+     * @param args used for arguments in method
+     */
     public static void main(String[] args) {
         MedicalClinicSystem mcs = new MedicalClinicSystem();
         Scanner console = new Scanner(System.in);
@@ -282,7 +286,9 @@ public class MedicalClinicSystem {
             System.out.println("File not found.");
         }
     }
-
+    /**
+     * method used to add new doctor
+     */
     public void addDoctor() {
         System.out.println("Enter Doctor's name");
         String name = scanner.nextLine();
@@ -301,7 +307,9 @@ public class MedicalClinicSystem {
         Doctor aDoctor = new Doctor(name, dateOfBirth, phoneNumber, address, specialty, yearsOfExperience);
         doctors.add(aDoctor);
     }    
-
+    /**
+     * Method used to add new patient
+     */
     public void addPatient() {
         System.out.println("Enter Patient's name");
         String name = scanner.nextLine();
@@ -319,7 +327,9 @@ public class MedicalClinicSystem {
         Patient aPatient = new Patient(name, dateOfBirth, phoneNumber, address, insuranceCompany, medicalHistory);
         patients.add(aPatient);
     }
-    
+    /**
+     * Method used to add new treatment
+     */
     public void addTreatment() {
         System.out.println("Enter the treatmentID");
         String treatmentID = scanner.nextLine();
@@ -338,7 +348,9 @@ public class MedicalClinicSystem {
         Treatment aTreatment = new Treatment(treatmentID, date, docName, patName, treatmentType, cost);
         treatments.add(aTreatment);
     }
-
+    /**
+     * Method used to display doctor array
+     */
     public void doctorDisplay() {
         for(Doctor aDoctor : doctors) {
 
@@ -348,7 +360,9 @@ public class MedicalClinicSystem {
         }
         System.out.println("Returning to menu");
     }
-
+    /**
+     * method used to display patient array
+     */
     public void patientDisplay() {
         for(Patient aPatient : patients) {
 
@@ -358,7 +372,9 @@ public class MedicalClinicSystem {
         System.out.println("Returning to menu");
         
     }
-
+    /**
+     * method used to display treatment array
+     */
     public void treatmentDisplay() {
         for(Treatment aTreatment : treatments) {
             

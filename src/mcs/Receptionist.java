@@ -14,24 +14,32 @@ package mcs;
  * @see Treatment
  */
 public class Receptionist extends Person implements Schedulable {
-    // we used the one parameter constructor from Person
+    /**
+     * One constructor from person super class, default constructor
+     * @param name receptionist name
+     */
     public Receptionist(String name) {
         super(name);
     }
-
+    /**
+     * method to schedule an appointment
+     */
     @Override
     public void scheduleAppointment() {
         System.out.println(getName() + " is scheduling an appointment for the patient");
     }
 
 
-    // THESE TWO METHODS ARE NOT CALLED except updateInfo()
-    // IT'S ONLY FOR THE METHOD TO WORK SINCE IT IS A SUB CLASS OF PERSON
+    /**
+     * unused method due to subclass of person
+     */
     @Override
     public void updateInfo() {
         System.out.println(getName() + " is updating the personal informations of the patient/doctor.");
     }
-
+    /**
+     * unused method due to subclass of person
+     */
     @Override
     public void displayInfo() {
         System.out.println("Receptionist: " + getName());

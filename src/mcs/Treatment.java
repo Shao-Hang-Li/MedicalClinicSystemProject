@@ -1,6 +1,18 @@
 package mcs;
 
-
+/**
+ * This is the treatment class
+ * 
+ * this class is used to store the various treatments and how and when they will be done
+ * @see Date
+ * @see Doctor
+ * @see MedicalClinicSystem
+ * @see Patient
+ * @see Person
+ * @see Receptionist
+ * @see Schedulable
+ * @see Treatable
+ */
 public class Treatment implements Treatable{
     //data members
     private String treatmentID;
@@ -62,22 +74,45 @@ public class Treatment implements Treatable{
         this.date = newDate;
     }
 
-    //accessor methods
+    /**
+     * getter for treatment ID
+     * @return treatment ID
+     */
     public String getTreatmentID() {
         return treatmentID;
     }
+    /**
+     * getter for date
+     * @return date
+     */
     public Date getDate() {
         return date;
     }
+    /**
+     * getter for doctor
+     * @return doctor
+     */
     public Doctor getDoctor() {
         return doctor;
     }
+    /**
+     * getter for patient
+     * @return patient
+     */
     public Patient getPatient() {
         return patient;
     }
+    /**
+     * getter for treatment type
+     * @return treatment type
+     */
     public String getTreatmentType() {
         return treatmentType;
     }
+    /**
+     * getter for cost
+     * @return cost
+     */
     public double getCost() {
         return cost;
     }
@@ -102,7 +137,9 @@ public class Treatment implements Treatable{
         String s1 = "Performing " + this.treatmentType + " treatment on " + this.patient.getName() + " by " + this.doctor.getName() + ". Treatment ID: "+ this.getTreatmentID() + "\n";
         System.out.println(s1.concat(this.toString()));
     }
-    //to String method
+    /**
+     * to String method for treatment
+     */
     @Override
     public String toString(){
         return "Treatment ID: " + treatmentID + "\n Date (DD MM YYYY): " + date + "\n Doctor: " + doctor + "\n Patient: " + patient
